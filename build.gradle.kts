@@ -115,9 +115,23 @@ subprojects {
 }
 
 tasks {
-    task("e2eBuild") {
+
+    task("cleanAll") {
         dependsOn(getTasksByName("clean", true))
+    }
+
+    task("buildAll") {
         dependsOn(getTasksByName("build", true))
-        dependsOn("bootstrapPlugins")
+    }
+
+    task("jarAll") {
+        dependsOn(getTasksByName("jar", true))
+    }
+
+    task("e2eBuild") {
+        dependsOn("cleanAll")
+        dependsOn("buildAll").mustRunAfter("cleanAll")
+        dependsOn("jarAll").mustRunAfter("buildAll")
+        dependsOn("bootstrapPlugins").mustRunAfter("jarAll")
     }
 }

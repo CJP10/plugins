@@ -33,7 +33,7 @@ open class BootstrapTask : DefaultTask() {
 
             project.subprojects.forEach {
                 if (it.project.properties.containsKey("PluginName") && it.project.properties.containsKey("PluginDescription")) {
-                    val plugin = it.project.tasks.get("jar").outputs.files.singleFile
+                    val plugin = File("release/${it.project.name}-${it.project.version}.jar")
 
                     val releases = ArrayList<JsonBuilder>()
 
@@ -56,6 +56,11 @@ open class BootstrapTask : DefaultTask() {
 
                     plugins.add(pluginObject)
                 }
+            }
+
+            if (File("plugins.json").exists()) {
+                File("plugins.json").delete()
+                File("plugins.json").createNewFile()
             }
 
             File("plugins.json").printWriter().use { out ->
