@@ -113,3 +113,11 @@ subprojects {
         }
     }
 }
+
+tasks {
+    task("e2eBuild") {
+        dependsOn(getTasksByName("clean", true))
+        dependsOn(getTasksByName("build", true))
+        dependsOn("bootstrapPlugins")
+    }
+}
