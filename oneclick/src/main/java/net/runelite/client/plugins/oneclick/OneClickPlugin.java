@@ -100,6 +100,11 @@ public class OneClickPlugin extends Plugin
 		{
 			modes.add(new Wines(this));
 		}
+
+		if (config.fertilizer())
+		{
+			modes.add(new Fertilizer(this));
+		}
 	}
 
 	public Optional<Pair<Integer, Integer>> findItem(int id)

@@ -39,4 +39,15 @@ public interface OneClickConfig extends Config
 	{
 		return false;
 	}
+
+	@ConfigItem(
+		position = 2,
+		keyName = "fertilizer",
+		name = "Fertilizer",
+		description = "Enable one click fertilizer making!"
+	)
+	default boolean fertilizer()
+	{
+		return false;
+	}
 }

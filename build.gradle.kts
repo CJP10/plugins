@@ -115,7 +115,6 @@ subprojects {
 }
 
 tasks {
-
     task("cleanAll") {
         dependsOn(getTasksByName("clean", true))
     }
@@ -124,14 +123,9 @@ tasks {
         dependsOn(getTasksByName("build", true))
     }
 
-    task("jarAll") {
-        dependsOn(getTasksByName("jar", true))
-    }
-
     task("e2eBuild") {
         dependsOn("cleanAll")
-        dependsOn("buildAll").mustRunAfter("cleanAll")
-        dependsOn("jarAll").mustRunAfter("buildAll")
-        dependsOn("bootstrapPlugins").mustRunAfter("jarAll")
+        dependsOn("buildAll")
+        dependsOn("bootstrapPlugins")
     }
 }
