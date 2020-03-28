@@ -43,7 +43,7 @@ public class Fertilizer implements ClickMode
 		return entry.getTarget() != null
 			&& !entry.getTarget().isEmpty()
 			&& entry.getMenuOpcode() == MenuOpcode.ITEM_USE
-			&& (plugin.findItem(ItemID.GRAPES).isPresent() || plugin.findItem(ItemID.JUG_OF_WATER).isPresent());
+			&& (plugin.findItem(ItemID.COMPOST).isPresent() || plugin.findItem(ItemID.SALTPETRE).isPresent());
 	}
 
 	@Override
