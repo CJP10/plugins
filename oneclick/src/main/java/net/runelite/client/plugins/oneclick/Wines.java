@@ -6,6 +6,7 @@ import net.runelite.api.MenuOpcode;
 
 public class Wines implements ClickMode
 {
+
 	private final OneClickPlugin plugin;
 
 	Wines(OneClickPlugin plugin)
@@ -19,7 +20,8 @@ public class Wines implements ClickMode
 		return entry.getTarget() != null
 			&& !entry.getTarget().isEmpty()
 			&& entry.getMenuOpcode() == MenuOpcode.ITEM_USE
-			&& (plugin.findItem(ItemID.GRAPES).isPresent() || plugin.findItem(ItemID.JUG_OF_WATER).isPresent());
+			&& plugin.findItem(ItemID.GRAPES).isPresent()
+			&& plugin.findItem(ItemID.JUG_OF_WATER).isPresent();
 	}
 
 	@Override
@@ -43,7 +45,8 @@ public class Wines implements ClickMode
 		return entry.getTarget() != null
 			&& !entry.getTarget().isEmpty()
 			&& entry.getMenuOpcode() == MenuOpcode.ITEM_USE
-			&& (plugin.findItem(ItemID.GRAPES).isPresent() || plugin.findItem(ItemID.JUG_OF_WATER).isPresent());
+			&& plugin.findItem(ItemID.GRAPES).isPresent()
+			&& plugin.findItem(ItemID.JUG_OF_WATER).isPresent();
 	}
 
 	@Override

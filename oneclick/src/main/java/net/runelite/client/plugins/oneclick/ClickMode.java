@@ -4,6 +4,7 @@ import net.runelite.api.MenuEntry;
 
 public interface ClickMode
 {
+
 	boolean isEntryValid(MenuEntry entry);
 
 	void modifyEntry(MenuEntry entry);

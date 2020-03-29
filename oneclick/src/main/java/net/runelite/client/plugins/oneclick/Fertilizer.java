@@ -6,6 +6,7 @@ import net.runelite.api.MenuOpcode;
 
 public class Fertilizer implements ClickMode
 {
+
 	private final OneClickPlugin plugin;
 
 	Fertilizer(OneClickPlugin plugin)
@@ -19,7 +20,8 @@ public class Fertilizer implements ClickMode
 		return entry.getTarget() != null
 			&& !entry.getTarget().isEmpty()
 			&& entry.getMenuOpcode() == MenuOpcode.ITEM_USE
-			&& (plugin.findItem(ItemID.SALTPETRE).isPresent() || plugin.findItem(ItemID.COMPOST).isPresent());
+			&& plugin.findItem(ItemID.SALTPETRE).isPresent() && plugin.findItem(ItemID.COMPOST)
+			.isPresent();
 	}
 
 	@Override
@@ -43,7 +45,8 @@ public class Fertilizer implements ClickMode
 		return entry.getTarget() != null
 			&& !entry.getTarget().isEmpty()
 			&& entry.getMenuOpcode() == MenuOpcode.ITEM_USE
-			&& (plugin.findItem(ItemID.COMPOST).isPresent() || plugin.findItem(ItemID.SALTPETRE).isPresent());
+			&& plugin.findItem(ItemID.SALTPETRE).isPresent()
+			&& plugin.findItem(ItemID.COMPOST).isPresent();
 	}
 
 	@Override

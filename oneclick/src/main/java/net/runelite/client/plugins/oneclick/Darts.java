@@ -7,6 +7,7 @@ import net.runelite.api.MenuOpcode;
 
 public class Darts implements ClickMode
 {
+
 	private static final HashMap<Integer, String> DART_IDS = new HashMap<>()
 	{{
 		put(ItemID.BRONZE_DART_TIP, "Bronze dart tip");
@@ -67,7 +68,6 @@ public class Darts implements ClickMode
 				entry.setForceLeftClick(true);
 				entry.setOpcode(MenuOpcode.ITEM_USE_ON_WIDGET_ITEM.getId());
 			}
-
 		}
 	}
 }

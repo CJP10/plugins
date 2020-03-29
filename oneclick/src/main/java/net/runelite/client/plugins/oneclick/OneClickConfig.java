@@ -7,6 +7,7 @@ import net.runelite.client.config.ConfigItem;
 @ConfigGroup("oneclick")
 public interface OneClickConfig extends Config
 {
+
 	@ConfigItem(
 		position = 0,
 		keyName = "darts",
@@ -41,12 +42,23 @@ public interface OneClickConfig extends Config
 	}
 
 	@ConfigItem(
-		position = 2,
+		position = 3,
 		keyName = "fertilizer",
 		name = "Fertilizer",
 		description = "Enable one click fertilizer making!"
 	)
 	default boolean fertilizer()
+	{
+		return false;
+	}
+
+	@ConfigItem(
+		position = 4,
+		keyName = "herbTar",
+		name = "Herb Tar",
+		description = "Enable one click herb tar making!"
+	)
+	default boolean herbTar()
 	{
 		return false;
 	}

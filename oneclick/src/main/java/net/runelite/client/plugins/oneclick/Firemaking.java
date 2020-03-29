@@ -7,6 +7,7 @@ import net.runelite.api.MenuOpcode;
 
 public class Firemaking implements ClickMode
 {
+
 	private static final HashMap<Integer, String> LOG_IDS = new HashMap<>()
 	{{
 		put(ItemID.LOGS, "Logs");

@@ -1,6 +1,6 @@
 import ProjectVersions.rlVersion
 
-version = "0.0.2"
+version = "0.0.3"
 
 project.extra["PluginName"] = "One Click Plugin"
 project.extra["PluginDescription"] = "Do actions in one click"

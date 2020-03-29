@@ -30,6 +30,7 @@ import org.pf4j.Extension;
 )
 public class OneClickPlugin extends Plugin
 {
+
 	@Inject
 	private Client client;
 
@@ -104,6 +105,11 @@ public class OneClickPlugin extends Plugin
 		if (config.fertilizer())
 		{
 			modes.add(new Fertilizer(this));
+		}
+
+		if (config.herbTar())
+		{
+			modes.add(new HerbTar(this));
 		}
 	}
 
