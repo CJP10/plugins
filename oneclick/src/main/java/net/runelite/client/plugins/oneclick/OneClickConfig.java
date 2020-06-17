@@ -62,4 +62,15 @@ public interface OneClickConfig extends Config
 	{
 		return false;
 	}
+
+	@ConfigItem(
+		position = 5,
+		keyName = "duelingCraftingCape",
+		name = "Dueling Crafting Cape",
+		description = "Adds dueling ring options to crafting cape"
+	)
+	default boolean duelingCraftingCape()
+	{
+		return false;
+	}
 }

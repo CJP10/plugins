@@ -5,6 +5,8 @@ import com.google.inject.Provides;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import lombok.Getter;
+import lombok.extern.slf4j.Slf4j;
 import net.runelite.api.Client;
 import net.runelite.api.events.MenuEntryAdded;
 import net.runelite.api.events.MenuOptionClicked;
@@ -20,6 +22,8 @@ import net.runelite.client.plugins.PluginType;
 import org.apache.commons.lang3.tuple.Pair;
 import org.pf4j.Extension;
 
+@Slf4j
+@Getter
 @Extension
 @PluginDescriptor(
 	name = "One Click",
@@ -36,6 +40,7 @@ public class OneClickPlugin extends Plugin
 
 	@Inject
 	private OneClickConfig config;
+
 	private ArrayList<ClickMode> modes = new ArrayList<>();
 
 	@Provides
@@ -110,6 +115,11 @@ public class OneClickPlugin extends Plugin
 		if (config.herbTar())
 		{
 			modes.add(new HerbTar(this));
+		}
+
+		if (config.duelingCraftingCape())
+		{
+			modes.add(new DuelingCraftingCape(this));
 		}
 	}
 
